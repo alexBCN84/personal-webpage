@@ -1,0 +1,37 @@
+{
+  "name": "portfolio-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "yarn run compile && node index.js",
+    "compile": "webpack --config webpack.config.js",
+    "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
+    "server": "nodemon index.js",
+    "dev": "concurrently \"yarn run server\" \"yarn run client\"",
+    "build": "webpack --mode production"
+  },
+  "author": "Alejandro Gines",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "axios": "^0.18.0",
+    "babel-loader": "^8.0.0",
+    "concurrently": "^4.1.0",
+    "keystone": "^4.0.0",
+    "keystoneplus": "^0.3.0",
+    "lodash": "^4.17.11",
+    "nodemon": "^1.18.9",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-redux": "^6.0.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "underscore": "^1.9.1",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^3.0.8"
+  }
+}
