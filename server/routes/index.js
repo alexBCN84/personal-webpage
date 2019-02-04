@@ -21,7 +21,8 @@ exports = module.exports = function (app) {
 		<!doctype html>
 		<html>
 			<head>
-				<title>Portfolio</title>
+                <title>Portfolio</title>
+                <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.1/dist/semantic.min.css"/>
 			</head>
       <body>
         <div class="react-container">

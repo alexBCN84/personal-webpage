@@ -11,6 +11,7 @@ import reducers from './reducers/reducers';
 // And our Recipe component
 import Project from './containers/Project';
 import Cv from './containers/Cv';
+
 // Define our store
 const store = createStore(reducers, applyMiddleware(thunk));
 

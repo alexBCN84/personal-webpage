@@ -5,6 +5,7 @@ import { cvsFetchData } from '../actions/actions.js';
 // We gonna use lodash to map over our cv object
 import _ from 'lodash';
 import { formatMonthAndYear } from '../helpers';
+import { Container } from 'semantic-ui-react'
 class Cv extends Component {
     constructor(props) {
         super(props);
@@ -142,9 +143,9 @@ class Cv extends Component {
         }
         // Show cv once data is loaded
         return (
-            <div>
+            <Container>
                 {this.renderCv()}
-            </div>
+            </Container>
         );
     };
 };

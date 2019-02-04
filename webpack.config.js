@@ -17,17 +17,57 @@ module.exports = {
     // Adding babel loader to compile our javascript and jsx files
     module: {
         rules: [{
-            test: /\.(js|jsx)$/,
-            exclude: /node_modules/,
-            use: {
-                loader: 'babel-loader',
-                options: {
-                    "presets": ["@babel/preset-env", "@babel/preset-react"]
-                }
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        "presets": ["@babel/preset-env", "@babel/preset-react"]
+                    }
+                },
             },
-        }, ]
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader', 'resolve-url-loader'],
+                include: [
+                    path.join(__dirname, 'src'),
+                    /node_modules/
+                ],
+            },
+            {
+                test: /\.(png|svg|jpg|gif|ico|jpeg)$/i,
+                use: [{
+                    loader: 'url-loader'
+                }]
+            },
+            {
+                test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+            },
+            {
+                test: /\.(ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                loader: 'file-loader'
+            },
+            {
+                test: /\.otf(\?.*)?$/,
+                use: 'file-loader?name=/fonts/[name].  [ext]&mimetype=application/font-otf'
+            },
+            {
+                test: /\.(le|sc|c)ss$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'postcss-loader',
+                    {
+                        loader: 'less-loader'
+
+                    }
+                ]
+            }
+        ]
     },
+
     resolve: {
-        extensions: ['.js', '.jsx', '.scss'],
+        extensions: ['.js', '.jsx', '.scss', '.css', 'less'],
     },
 };
