@@ -5,7 +5,8 @@ import { cvsFetchData } from '../actions/actions.js';
 // We gonna use lodash to map over our cv object
 import _ from 'lodash';
 import { formatMonthAndYear } from '../helpers';
-import { Container } from 'semantic-ui-react'
+import { Container, Header, Divider } from 'semantic-ui-react';
+
 class Cv extends Component {
     constructor(props) {
         super(props);
@@ -47,8 +48,9 @@ class Cv extends Component {
             if (cv.state = "published") {
                 return (
                     <div key={cv._id}>
-                        <h1>{cv.name}</h1>
-                        <h2>{cv.title}</h2>
+                        <Header style={{ fontFamily: "'ZCOOL KuaiLe', cursive" }} size="huge">{cv.name}</Header>
+                        <p>{cv.title}</p>
+                        <Divider />
                         <h2>{cv.email}</h2>
                         <h2>{cv.phone}</h2>
                         <h2>{cv.linkedin}</h2>

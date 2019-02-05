@@ -11,6 +11,13 @@ import reducers from './reducers/reducers';
 // And our Recipe component
 import Project from './containers/Project';
 import Cv from './containers/Cv';
+import WebFont from 'webfontloader';
+
+WebFont.load({
+    google: {
+        families: ['ZCOOL KuaiLe', 'cursive']
+    }
+});
 
 // Define our store
 const store = createStore(reducers, applyMiddleware(thunk));
